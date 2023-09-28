@@ -37,6 +37,38 @@ namespace SokszogOOP
             }
         }
 
+        public double OsszKerulet()
+        {
+            double osszKerulet = 0;
+            foreach (var item in sokszogek)
+            {
+                osszKerulet += item.GetKerulet();
+            }
+            return osszKerulet;
+        }
+        public double OsszTerulet()
+        {
+            double osszTerulet = 0;
+            foreach (var item in sokszogek)
+            {
+                osszTerulet += item.GetTerulet();
+            }
+            return osszTerulet;
+        }
+        public int MaxTerulet()
+        {
+            double maxTerulet = sokszogek[0].GetTerulet();
+            int index = 0;
+            for (int i = 0; i < sokszogek.Count; i++)
+            {
+                if (maxTerulet < sokszogek[i].GetTerulet())
+                {
+                    maxTerulet = sokszogek[i].GetTerulet();
+                    index = i;
+                }
+            }
+            return index+1;
+        }
         public override string ToString()
         {
             string tartalom = "";

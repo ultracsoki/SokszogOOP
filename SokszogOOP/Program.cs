@@ -39,6 +39,9 @@ namespace SokszogOOP
             Console.WriteLine("\n----------------------------------------------\n");
             Sokszogek sokszogek = new Sokszogek();
             Console.WriteLine(sokszogek);
+            Console.WriteLine("\nÖsszterület: " + sokszogek.OsszKerulet());
+            Console.WriteLine("Összkerület: " + sokszogek.OsszTerulet());
+            Console.WriteLine($"Legnagyobb területe a {sokszogek.MaxTerulet()}. elemnek van.");
 
             Console.ReadKey();
         }
