@@ -36,6 +36,10 @@ namespace SokszogOOP
             Paralelogramma paralelogramma = new Paralelogramma();
             Console.WriteLine(paralelogramma);
 
+            Console.WriteLine("\n----------------------------------------------\n");
+            Sokszogek sokszogek = new Sokszogek();
+            Console.WriteLine(sokszogek);
+
             Console.ReadKey();
         }
     }
