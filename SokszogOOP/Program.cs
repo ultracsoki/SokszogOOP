@@ -10,7 +10,10 @@ namespace SokszogOOP
     {
         static void Main(string[] args)
         {
+            //Halasi-Czalbert Tibor
 
+
+            Console.ReadKey();
         }
     }
 }
