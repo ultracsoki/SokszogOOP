@@ -22,6 +22,21 @@ namespace SokszogOOP
             Console.WriteLine(teglalap);
             Console.WriteLine(teglalap2);
 
+            Console.WriteLine(haromszog2.A);
+            try
+            {
+                haromszog2.A = 10;
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.WriteLine(haromszog2.A);
+
+            Paralelogramma paralelogramma = new Paralelogramma();
+            paralelogramma.GetKerulet();
+
             Console.ReadKey();
         }
     }

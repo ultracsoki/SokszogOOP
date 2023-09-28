@@ -15,14 +15,14 @@ namespace SokszogOOP
             this.a = a;
         }
 
-        public double A { get => a; set => a = value; }
+        public virtual double A { get => a; set => a = value; }
 
         public abstract double GetKerulet();
         public abstract double GetTerulet();
 
         public override string ToString()
         {
-            return "";
+            return $"Kerület: {this.GetKerulet()}  Terület: {this.GetTerulet()}";
         }
     }
 }
