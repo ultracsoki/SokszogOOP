@@ -13,7 +13,7 @@ namespace SokszogOOP
         private double alfa;
 
 
-        public Paralelogramma(double a, double b, double alfa) : base(a,b)
+        public Paralelogramma(double a, double b, double alfa) : base(a, b)
         {
             if (alfa >= 180)
             {
@@ -22,14 +22,16 @@ namespace SokszogOOP
             this.alfa = alfa;
         }
 
-        public Paralelogramma() : base(VeletlenOldalhossz(),VeletlenOldalhossz())
+        public Paralelogramma() : base(VeletlenOldalhossz(), VeletlenOldalhossz())
         {
             base.A = VeletlenOldalhossz();
             base.B = VeletlenOldalhossz();
             this.alfa = VeletlenSzog();
         }
 
-        public double Alfa { get => alfa;
+        public double Alfa
+        {
+            get => alfa;
             set
             {
                 if (value >= 180)
@@ -49,7 +51,7 @@ namespace SokszogOOP
         public override double GetTerulet()
         {
             //return this.A * this.B * Math.Sin(this.alfa / 180 * Math.PI);
-            return base.GetTerulet() *  FokbolRadianba(this.alfa);
+            return base.GetTerulet() * FokbolRadianba(this.alfa);
         }
 
         public override string ToString()

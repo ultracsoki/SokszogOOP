@@ -9,27 +9,25 @@ namespace SokszogOOP
 {
     internal class Sokszogek
     {
-        private List<Sokszog> sokszogek = new List<Sokszog>();
-        static Random random = new Random();
+        private List<Sokszog> sokszogek;
+        private static Random random = new Random();
 
-        public Sokszogek() 
+        public Sokszogek()
         {
+            sokszogek = new List<Sokszog>();
             for (int i = 0; i < 10; i++)
             {
-                int randomNumber = random.Next(0,3);
-                switch (randomNumber) 
+                int randomNumber = random.Next(3);
+                switch (randomNumber)
                 {
                     case 0:
-                        Paralelogramma paralelogramma = new Paralelogramma();
-                        sokszogek.Add(paralelogramma);
+                        sokszogek.Add(new Paralelogramma());
                         break;
                     case 1:
-                        Haromszog haromszog = new Haromszog();
-                        sokszogek.Add(haromszog);
+                        sokszogek.Add(new Haromszog());
                         break;
                     case 2:
-                        Teglalap teglalap = new Teglalap(5,15);
-                        sokszogek.Add(teglalap);
+                        sokszogek.Add(new Teglalap());
                         break;
                     default:
                         break;
@@ -40,43 +38,42 @@ namespace SokszogOOP
         public double OsszKerulet()
         {
             double osszKerulet = 0;
-            foreach (var item in sokszogek)
+            foreach (var sokszog in sokszogek)
             {
-                osszKerulet += item.GetKerulet();
+                osszKerulet += sokszog.GetKerulet();
             }
             return osszKerulet;
         }
         public double OsszTerulet()
         {
             double osszTerulet = 0;
-            foreach (var item in sokszogek)
+            foreach (var sokszog in sokszogek)
             {
-                osszTerulet += item.GetTerulet();
+                osszTerulet += sokszog.GetTerulet();
             }
             return osszTerulet;
         }
         public int MaxTerulet()
         {
-            double maxTerulet = sokszogek[0].GetTerulet();
-            int index = 0;
-            for (int i = 0; i < sokszogek.Count; i++)
+            int maxIndex = 0;
+            for (int i = 1; i < sokszogek.Count; i++)
             {
-                if (maxTerulet < sokszogek[i].GetTerulet())
+                if (sokszogek[maxIndex].GetTerulet() < sokszogek[i].GetTerulet())
                 {
-                    maxTerulet = sokszogek[i].GetTerulet();
-                    index = i;
+                    maxIndex = i;
                 }
             }
-            return index+1;
+            return maxIndex + 1;
         }
         public override string ToString()
         {
-            string tartalom = "";
-            foreach (var item in sokszogek)
+            var sb = new StringBuilder("Sokszögek:");
+            foreach (var sokszog in sokszogek)
             {
-                tartalom += item + "\n";
+                sb.AppendLine();
+                sb.AppendLine($"\t{sokszog.ToString()}");
             }
-            return tartalom;
+            return sb.ToString();
         }
     }
 }

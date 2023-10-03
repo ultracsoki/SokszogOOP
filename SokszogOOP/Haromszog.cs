@@ -45,16 +45,16 @@ namespace SokszogOOP
             }
         }
         public double B
-        { 
-            get => b; 
-            set 
+        {
+            get => b;
+            set
             {
                 b = value;
                 if (!IsSzerkesztheto())
                 {
                     throw new ArgumentException("A háromszög nem szerkeszthető", nameof(value));
                 }
-            } 
+            }
         }
         public double C
         {
@@ -71,8 +71,8 @@ namespace SokszogOOP
 
         private bool IsSzerkesztheto()
         {
-            return this.A + this.b > this.c 
-                && this.A + this.c > this.b 
+            return this.A + this.b > this.c
+                && this.A + this.c > this.b
                 && this.c + this.b > this.A;
         }
 
