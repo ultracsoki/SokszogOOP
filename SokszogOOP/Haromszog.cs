@@ -33,11 +33,6 @@ namespace SokszogOOP
                 this.c = VeletlenOldalhossz();
             }
         }
-
-        private static int VeletlenOldalhossz()
-        {
-            return random.Next(5, 15);
-        }
         public override double A
         {
             set
