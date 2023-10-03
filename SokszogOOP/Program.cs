@@ -13,9 +13,9 @@ namespace SokszogOOP
             //Halasi-Czalbert Tibor
 
             Haromszog haromszog = new Haromszog();
-            Haromszog haromszog2 = new Haromszog(3,4,5);
-            Teglalap teglalap = new Teglalap(3,5);
-            Teglalap teglalap2 = new Teglalap(4,2);
+            Haromszog haromszog2 = new Haromszog(3, 4, 5);
+            Teglalap teglalap = new Teglalap(3, 5);
+            Teglalap teglalap2 = new Teglalap(4, 2);
 
             Console.WriteLine(haromszog);
             Console.WriteLine(haromszog2);

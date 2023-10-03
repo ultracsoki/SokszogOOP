@@ -15,6 +15,11 @@ namespace SokszogOOP
             this.b = b;
         }
 
+        public Teglalap() : base(VeletlenOldalhossz())
+        {
+            this.b = VeletlenOldalhossz();
+        }
+
         public double B { get => b; set => b = value; }
 
         public override double GetKerulet()

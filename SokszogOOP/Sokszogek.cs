@@ -9,27 +9,25 @@ namespace SokszogOOP
 {
     internal class Sokszogek
     {
-        private List<Sokszog> sokszogek = new List<Sokszog>();
-        static Random random = new Random();
+        private List<Sokszog> sokszogek;
+        private static Random random = new Random();
 
-        public Sokszogek() 
+        public Sokszogek()
         {
+            sokszogek = new List<Sokszog>();
             for (int i = 0; i < 10; i++)
             {
-                int randomNumber = random.Next(0,3);
-                switch (randomNumber) 
+                int randomNumber = random.Next(3);
+                switch (randomNumber)
                 {
                     case 0:
-                        Paralelogramma paralelogramma = new Paralelogramma();
-                        sokszogek.Add(paralelogramma);
+                        sokszogek.Add(new Paralelogramma());
                         break;
                     case 1:
-                        Haromszog haromszog = new Haromszog();
-                        sokszogek.Add(haromszog);
+                        sokszogek.Add(new Haromszog());
                         break;
                     case 2:
-                        Teglalap teglalap = new Teglalap(5,15);
-                        sokszogek.Add(teglalap);
+                        sokszogek.Add(new Teglalap());
                         break;
                     default:
                         break;
@@ -67,16 +65,17 @@ namespace SokszogOOP
                     index = i;
                 }
             }
-            return index+1;
+            return index + 1;
         }
         public override string ToString()
         {
-            string tartalom = "";
-            foreach (var item in sokszogek)
+            var sb = new StringBuilder("Sokszögek:");
+            foreach (var sokszog in sokszogek)
             {
-                tartalom += item + "\n";
+                sb.AppendLine();
+                sb.AppendLine($"\t{sokszog.ToString()}");
             }
-            return tartalom;
+            return sb.ToString();
         }
     }
 }
